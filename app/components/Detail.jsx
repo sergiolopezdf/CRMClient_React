@@ -20,6 +20,8 @@ export default class Detail extends React.Component {
         let fullModule = <div id="contentSide">
             <VisitDetail plannedFor={visit.plannedFor} fulfilledAt={visit.fulfilledAt} />
             <TargetDetail targets={visit.Targets}/>
+            <CustomerDetail customer={visit.Customer}/>
+            <SalesmanDetail salesman={visit.Salesman}/>
         </div>
 
         return fullModule;
