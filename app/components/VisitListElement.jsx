@@ -9,7 +9,7 @@ export default class VisitListElement extends React.Component {
     }
 
     visitClick () {
-        this.props.visitClick(this.props.visit.id);
+        this.props.visitClick(this.props.index);
     }
 
 

@@ -9,18 +9,18 @@ export default class VisitList extends React.Component {
         this.visitClick = this.visitClick.bind(this);
     }
 
-    visitClick (id) {
-        this.props.visitClick(id);
+    visitClick (index) {
+        this.props.visitClick(index);
     }
 
     render() {
-        let lista = <ul> {
+        let lista = <div id="leftSide"><ul> {
             this.props.visits.map((element, index) => {
-                let visit = <VisitListElement visit={element} key={index} visitClick={this.visitClick}/>
+                let visit = <VisitListElement visit={element} index = {index} key={index} visitClick={this.visitClick}/>
                 return visit;
             })
         }
-        </ul>
+        </ul></div>
         return lista;
     }
 }
