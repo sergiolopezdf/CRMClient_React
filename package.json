@@ -1,7 +1,7 @@
 {
-  "name": "react-iweb-boilerplate",
-  "version": "2.0.0",
-  "description": "IWEB React Boilerplate",
+  "name": "CRM_client_IWEB",
+  "version": "1.0.0",
+  "description": "Based on IWEB React Boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -34,6 +34,7 @@
     ]
   },
   "dependencies": {
+    "@types/react": "^16.0.27",
     "cross-env": "5.1.0",
     "eslint-plugin-jsx-a11y": "^5.1.0",
     "react": "16.0.0",
