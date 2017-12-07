@@ -3,10 +3,8 @@ import './../assets/scss/main.scss';
 import {visits} from "../assets/mock-data";
 import VisitList from './VisitList';
 import Detail from "./Detail";
-
 import {connect} from 'react-redux';
 import {updateInfo} from "../reducers/actions";
-import {CURRENTVISIT} from "../constants/constants";
 
 
 class App extends React.Component {
