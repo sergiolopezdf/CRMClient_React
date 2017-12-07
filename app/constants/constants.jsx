@@ -1,3 +1,3 @@
 //Constants file
 
-export let initialVisit = null;
+export let CURRENTVISIT = null;
