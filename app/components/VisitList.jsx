@@ -1,6 +1,7 @@
 import React from 'react';
 import './../assets/scss/main.scss';
-import VisitListElement from './VisitListElement'
+import VisitListElement from './VisitListElement';
+import {ListGroup, Col} from 'react-bootstrap';
 
 export default class VisitList extends React.Component {
 
@@ -9,18 +10,19 @@ export default class VisitList extends React.Component {
         this.visitClick = this.visitClick.bind(this);
     }
 
-    visitClick (index) {
+    visitClick(index) {
         this.props.visitClick(index);
     }
 
     render() {
-        let lista = <div id="leftSide"><ul> {
+        return (<Col xs={12} md={4} lg={2} sm={4} lgOffset={1}><ListGroup>{
             this.props.visits.map((element, index) => {
-                let visit = <VisitListElement visit={element} index = {index} key={index} visitClick={this.visitClick}/>
-                return visit;
+                return (
+                    <VisitListElement visit={element} index={index} key={index} visitClick={this.visitClick}/>
+                )
             })
         }
-        </ul></div>
-        return lista;
+        </ListGroup></Col>)
+
     }
 }

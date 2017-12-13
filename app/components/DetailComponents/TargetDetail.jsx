@@ -1,6 +1,7 @@
 import React from 'react';
 import './../../assets/scss/main.scss';
 import TargetElement from './TargetElement';
+import {Col, Row} from 'react-bootstrap';
 
 export default class TargetDetail extends React.Component {
     render() {
@@ -14,14 +15,28 @@ export default class TargetDetail extends React.Component {
         let targets = this.props.targets;
 
         //Creating as many TD modules as existing targets
-        let module = <div id="TargetDetail"> {
-            targets.map((element, index) => {
-                let myKey = "detail" + index;
-                let targetElement = <TargetElement key={myKey} targetElement={element}/>
-                return targetElement;
-            })
-        }
-        </div>
+        let module =
+            <div>
+                <Row>
+                    <Col xs={12} md={12} lg={12} sm={12}>
+                        <h2 className="sectionTitle"><span className="glyphicon glyphicon-ok-circle"
+                                                           aria-hidden="true"></span> Targets</h2>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col xs={12} md={12} lg={12} sm={12}>
+                        {
+                            targets.map((element, index) => {
+                                let myKey = "detail" + index;
+                                let targetElement = <TargetElement key={myKey} targetElement={element}/>
+                                return targetElement;
+                            })
+                        }</Col>
+                </Row>
+            </div>
+
+
         return module;
 
     }

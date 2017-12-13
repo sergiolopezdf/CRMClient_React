@@ -5,7 +5,8 @@ import VisitList from './VisitList';
 import Detail from "./Detail";
 import {connect} from 'react-redux';
 import {updateInfo} from "../reducers/actions";
-
+import {Grid, Row, PageHeader, Col} from 'react-bootstrap';
+import Header from './Header';
 
 class App extends React.Component {
 
@@ -22,10 +23,15 @@ class App extends React.Component {
     render() {
         return (
             //Missing heading
-            <div id="wrapper">
-                <VisitList visits={visits} visitClick={this.visitClick}/>
-                <Detail visit={this.props.currentVisit}/>
-            </div>
+            <Grid>
+                <Row className="show-grid mainHeader">
+                    <Header/>
+                </Row>
+                <Row className="show-grid">
+                    <VisitList visits={visits} visitClick={this.visitClick}/>
+                    <Detail visit={this.props.currentVisit}/>
+                </Row>
+            </Grid>
 
         );
     }
