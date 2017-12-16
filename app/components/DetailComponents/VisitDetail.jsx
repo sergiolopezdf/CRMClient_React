@@ -4,7 +4,14 @@ import {Col, Row} from 'react-bootstrap';
 
 export default class VisitDetail extends React.Component {
     render() {
+        var fulfilledAt = this.props.fulfilledAt;
+        if (fulfilledAt === null) {
+            fulfilledAt = "Pending";
+        } else {
+            fulfilledAt = fulfilledAt.substr(0,10);
+        }
 
+        let plannedFor = this.props.plannedFor.substr(0,10);
 
         return <div>
 
@@ -15,11 +22,11 @@ export default class VisitDetail extends React.Component {
             </Row>
             <Row>
                 <Col xs={12} md={6} lg={6} sm={12}><span className="glyphicon glyphicon-calendar"
-                                                         aria-hidden="true"></span> Planned for: {this.props.plannedFor}
+                                                         aria-hidden="true"></span> Planned for: {plannedFor}
                 </Col>
                 <Col xs={12} md={6} lg={6} sm={12}><span className="glyphicon glyphicon-info-sign"
                                                          aria-hidden="true"></span> Fulfilled
-                    at: {this.props.fulfilledAt}</Col>
+                    at: {fulfilledAt}</Col>
             </Row>
 
         </div>

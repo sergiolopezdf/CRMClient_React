@@ -19,12 +19,12 @@ export default class Detail extends React.Component {
 
         //Module
         return (<Col xs={12} md={8} lg={8} sm={8}><Panel>
-            <VisitDetail plannedFor={visit.plannedFor} fulfilledAt={visit.fulfilledAt}/>
-            <TargetDetail targets={visit.Targets}/>
             <Row>
                 <CustomerDetail customer={visit.Customer}/>
                 <SalesmanDetail salesman={visit.Salesman}/>
             </Row>
+            <VisitDetail plannedFor={visit.plannedFor} fulfilledAt={visit.fulfilledAt}/>
+            <TargetDetail targets={visit.Targets}/>
         </Panel></Col>)
     }
 }
