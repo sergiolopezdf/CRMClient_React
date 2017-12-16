@@ -75,6 +75,9 @@ ul#visitListElementDetails {
 .list-group-item:last-child {
   border-radius: 0 9px 0 9px;
 }
+.list-group-item:focus {
+  outline: none;
+}
 
 .panel {
   border: none;
