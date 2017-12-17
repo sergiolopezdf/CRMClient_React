@@ -15,6 +15,7 @@ export default class VisitList extends React.Component {
     }
 
     render() {
+
         return (<Col xs={12} md={4} lg={2} sm={4} lgOffset={1}><ListGroup>{
             this.props.visits.map((element, index) => {
                 return (

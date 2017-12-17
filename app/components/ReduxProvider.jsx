@@ -10,7 +10,7 @@ export default class ReduxProvider extends React.Component {
 
     constructor(props) {
         super(props);
-        this.initialState = {currentVisit: null};
+        this.initialState = {isDataReady: false, currentVisit: null};
         this.store = this.configureStore();
     }
 
