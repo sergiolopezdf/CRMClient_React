@@ -64,12 +64,12 @@ class App extends React.Component {
         let isDataReady = this.props.isDataReady;
 
         if (isDataReady === false) {
-            let spinner = <div class="spinner">
-                <div class="rect1"></div>
-                <div class="rect2"></div>
-                <div class="rect3"></div>
-                <div class="rect4"></div>
-                <div class="rect5"></div>
+            let spinner = <div className="spinner">
+                <div className="rect1"></div>
+                <div className="rect2"></div>
+                <div className="rect3"></div>
+                <div className="rect4"></div>
+                <div className="rect5"></div>
             </div>
             return spinner;
         }
@@ -80,7 +80,7 @@ class App extends React.Component {
                 <Row className="show-grid mainHeader">
                     <Header/>
                 </Row>
-                <Row className="show-grid">
+                <Row className="show-grid bodyWrapper">
                     <VisitList visits={visits} visitClick={this.visitClick}/>
                     <Detail visit={this.props.currentVisit}/>
                 </Row>

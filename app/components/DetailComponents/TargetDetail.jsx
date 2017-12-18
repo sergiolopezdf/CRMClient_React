@@ -26,13 +26,15 @@ export default class TargetDetail extends React.Component {
 
                 <Row>
                     <Col xs={12} md={12} lg={12} sm={12}>
-                        {
-                            targets.map((element, index) => {
-                                let myKey = "detail" + index;
-                                let targetElement = <TargetElement key={myKey} targetElement={element}/>
-                                return targetElement;
-                            })
-                        }</Col>
+                        <Col xs={12} md={12} lg={12} sm={12}>
+                            {
+                                targets.map((element, index) => {
+                                    let myKey = "detail" + index;
+                                    let targetElement = <TargetElement key={myKey} targetElement={element}/>
+                                    return targetElement;
+                                })
+                            }</Col>
+                    </Col>
                 </Row>
             </div>
 

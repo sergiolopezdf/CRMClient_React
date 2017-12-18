@@ -66,6 +66,20 @@ ul#visitListElementDetails {
 .list-group {
   border-radius: none;
   box-shadow: none;
+  overflow-y: scroll;
+  height: 78vh;
+  padding-right: 15px;
+}
+
+.salesmanImg {
+  border: none;
+  outline: none;
+  border-radius: 0 10px 0 10px;
+  height: 15vh;
+}
+
+.salesmanImg img {
+  outline: none;
 }
 
 .list-group-item:first-child {

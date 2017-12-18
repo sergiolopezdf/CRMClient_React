@@ -8,10 +8,10 @@ export default class VisitDetail extends React.Component {
         if (fulfilledAt === null) {
             fulfilledAt = "Pending";
         } else {
-            fulfilledAt = fulfilledAt.substr(0,10);
+            fulfilledAt = fulfilledAt.substr(0, 10);
         }
 
-        let plannedFor = this.props.plannedFor.substr(0,10);
+        let plannedFor = this.props.plannedFor.substr(0, 10);
 
         return <div>
 
@@ -21,12 +21,19 @@ export default class VisitDetail extends React.Component {
                     aria-hidden="true"></span> Info</h2></Col>
             </Row>
             <Row>
-                <Col xs={12} md={6} lg={6} sm={12}><span className="glyphicon glyphicon-calendar"
-                                                         aria-hidden="true"></span> Planned for: {plannedFor}
+                <Col xs={12} md={6} lg={6} sm={12}>
+                    <Col xs={12} md={12} lg={12} sm={12}>
+                    <span className="glyphicon glyphicon-calendar"
+                          aria-hidden="true"></span> Planned for: {plannedFor}
+                    </Col>
                 </Col>
-                <Col xs={12} md={6} lg={6} sm={12}><span className="glyphicon glyphicon-info-sign"
-                                                         aria-hidden="true"></span> Fulfilled
-                    at: {fulfilledAt}</Col>
+                <Col xs={12} md={6} lg={6} sm={12}>
+
+                    <Col xs={12} md={12} lg={12} sm={12}>
+                    <span className="glyphicon glyphicon-info-sign"
+                          aria-hidden="true"></span> Fulfilled
+                        at: {fulfilledAt}</Col>
+                </Col>
             </Row>
 
         </div>
