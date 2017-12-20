@@ -22,13 +22,13 @@ class App extends React.Component {
     }
 
     dateUpdate() {
-        let iDay = $('#iDay').val();
-        let iMonth = $('#iMonth').val();
-        let iYear = $('#iYear').val();
+        let iDay = $("#iDay option:selected").val();
+        let iMonth = $("#iMonth option:selected").val();
+        let iYear = $("#iYear option:selected").val();
 
-        let fDay = $('#fDay').val();
-        let fMonth = $('#fMonth').val();
-        let fYear = $('#fYear').val();
+        let fDay = $("#fDay option:selected").val();
+        let fMonth = $("#fMonth option:selected").val();
+        let fYear = $("#fYear option:selected").val();
 
         this.props.dispatch(updateDates(
             [iDay, iMonth, iYear],
@@ -97,21 +97,80 @@ class App extends React.Component {
 
 
         if (dates === null) {
+
+
             let form = <Grid>
                 <Row className="show-grid mainHeader">
                     <Header/>
                 </Row>
+
                 <Row>
                     <Col lgOffset={4} lg={4} mdOffset={3} md={6} smOffset={2} sm={3} xs={12}>
                         <ControlLabel><span>Set the initial date</span></ControlLabel>
                     </Col>
                 </Row>
                 <Row>
-                    <Col lgOffset={4} lg={1} mdOffset={3} md={2} smOffset={2} sm={3} xs={4}><FormControl id="iDay"
-                                                                                                         type="text"
-                                                                                                         placeholder="Day"/></Col>
-                    <Col lg={1} md={2} sm={3} xs={4}><FormControl id="iMonth" type="text" placeholder="Month"/></Col>
-                    <Col lg={1} md={2} sm={3} xs={4}><FormControl id="iYear" type="text" placeholder="Year"/></Col>
+                    <Col lgOffset={4} lg={1} mdOffset={3} md={2} smOffset={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="iDay">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </FormControl>
+                    </Col>
+                    <Col lg={1} md={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="iMonth">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+
+                        </FormControl>
+                    </Col>
+                    <Col lg={1} md={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="iYear">
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                        </FormControl>
+                    </Col>
                 </Row>
                 <Row>
                     <Col lgOffset={4} lg={4} mdOffset={3} md={6} smOffset={2} sm={3} xs={12}>
@@ -119,11 +178,67 @@ class App extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lgOffset={4} lg={1} mdOffset={3} md={2} smOffset={2} sm={3} xs={4}><FormControl id="fDay"
-                                                                                                         type="text"
-                                                                                                         placeholder="Day"/></Col>
-                    <Col lg={1} md={2} sm={3} xs={4}><FormControl id="fMonth" type="text" placeholder="Month"/></Col>
-                    <Col lg={1} md={2} sm={3} xs={4}><FormControl id="fYear" type="text" placeholder="Year"/></Col>
+                    <Col lgOffset={4} lg={1} mdOffset={3} md={2} smOffset={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="fDay">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </FormControl>
+                    </Col>
+                    <Col lg={1} md={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="fMonth">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+
+                        </FormControl>
+                    </Col>
+                    <Col lg={1} md={2} sm={3} xs={4}>
+                        <FormControl componentClass="select" placeholder="select" id="fYear">
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                        </FormControl>
+                    </Col>
                 </Row>
 
                 <Row>
@@ -132,6 +247,7 @@ class App extends React.Component {
                     </Col>
                 </Row>
             </Grid>
+
             return form;
 
         }
