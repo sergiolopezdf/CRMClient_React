@@ -5,12 +5,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import App from './App';
+import {DATES, ISDATAREADY, CURRENTVISIT} from "../constants/constants";
 
 export default class ReduxProvider extends React.Component {
 
     constructor(props) {
         super(props);
-        this.initialState = {isDataReady: false, currentVisit: null};
+        this.initialState = {isDataReady: ISDATAREADY, currentVisit: CURRENTVISIT, dates: DATES};
         this.store = this.configureStore();
     }
 

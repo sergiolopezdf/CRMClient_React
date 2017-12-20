@@ -15,3 +15,13 @@ export function updateData() {
         isDataReady: true,
     }
 }
+
+export function updateDates(initialDate, finalDate) {
+    //Pick the user dates for the reducer to apply them
+    return {
+        type: 'UPDATE_DATES',
+        initialDate: initialDate,
+        finalDate: finalDate,
+    }
+
+}
