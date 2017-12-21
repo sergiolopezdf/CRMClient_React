@@ -8,9 +8,8 @@ import {Grid, Row, FormControl, FormGroup, Col, ControlLabel, Button, ButtonTool
 import Header from './Header';
 import $ from 'jquery';
 
-
-//Data from JSON
-var visits = null;
+// Data from JSON
+let visits = null;
 
 class App extends React.Component {
 
@@ -41,14 +40,12 @@ class App extends React.Component {
         this.props.dispatch(updateInfo(visits[index]));
     }
 
-
-    //Asking the API for the data
+    // Asking the API for the data
     componentDidUpdate() {
 
         let dates = this.props.dates;
 
         let url = "https://dcrmt.herokuapp.com/api/visits/flattened?token=6bac0f89326e4c92d000";
-
 
         let dateAfter = "&dateafter=" + dates[0][2] + "-" + dates[0][1] + "-"
             + dates[0][0];
@@ -57,47 +54,43 @@ class App extends React.Component {
 
         url = url + dateAfter + dateBefore;
 
+        // HTTP request
+        let req = new XMLHttpRequest();
 
-        //HTTP request
-        var req = new XMLHttpRequest();
-
-        //True == async
+        // True == async
         req.open('GET', url, true);
 
-        //Asigning 'this' to use it later on
+        // Asigning 'this' to use it later on
         let myself = this;
 
-        //Petition
+        // Petition
         req.onreadystatechange = function (aEvt) {
             if (req.readyState === 4) {
                 if (req.status === 200) {
 
-                    //Parsing the JSON
+                    // Parsing the JSON
                     visits = JSON.parse(req.responseText);
 
-                    //Asking Redux to change the state
+                    // Asking Redux to change the state
                     myself.props.dispatch(updateData());
 
-                    //Return
+                    // Return
                     return;
                 }
             }
 
-        }
+        };
 
         req.send(null);
     }
 
-
     render() {
 
-        //Checking Redux state
+        // Checking Redux state
         let isDataReady = this.props.isDataReady;
         let dates = this.props.dates;
 
-
         if (dates === null) {
-
 
             let form = <Grid>
                 <Row className="show-grid mainHeader">
@@ -243,28 +236,28 @@ class App extends React.Component {
 
                 <Row>
                     <Col lgOffset={4} lg={4} mdOffset={3} md={6} smOffset={2} sm={3} xs={12}>
-                        <Button bsStyle="primary" onClick={this.dateUpdate}>Submit</Button>
+                        <div id="sendButton">
+                            <Button bsStyle="primary" onClick={this.dateUpdate}>Submit</Button>
+                        </div>
                     </Col>
                 </Row>
-            </Grid>
+            </Grid>;
 
             return form;
 
         }
 
-
         if (isDataReady === false) {
             let spinner = <div className="spinner">
-                <div className="rect1"></div>
-                <div className="rect2"></div>
-                <div className="rect3"></div>
-                <div className="rect4"></div>
-                <div className="rect5"></div>
-            </div>
+                <div className="rect1"/>
+                <div className="rect2"/>
+                <div className="rect3"/>
+                <div className="rect4"/>
+                <div className="rect5"/>
+            </div>;
 
             return spinner;
         }
-
 
         return (
             <Grid>
@@ -280,11 +273,9 @@ class App extends React.Component {
         );
     }
 
-
 }
 
 function dataPick() {
-
 
 }
 

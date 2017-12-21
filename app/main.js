@@ -5,7 +5,7 @@ import ReduxProvider from './components/ReduxProvider';
 
 import App from './components/App';
 
-/*const render = (Component) => {
+/* const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Component />

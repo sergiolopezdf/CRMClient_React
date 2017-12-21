@@ -9,15 +9,15 @@ import {Row, Col, Panel} from 'react-bootstrap';
 export default class Detail extends React.Component {
     render() {
 
-        //Check the state
+        // Check the state
         if (this.props.visit === null) {
-            return (<Col xs={12} md={8} lg={8} sm={8}><Panel>No data to show yet</Panel></Col>)
+            return (<Col xs={12} md={8} lg={8} sm={8}><Panel>No data to show yet</Panel></Col>);
         }
 
-        //Creating a new var
+        // Creating a new var
         let visit = this.props.visit;
 
-        //Module
+        // Module
         return (<Col xs={12} md={8} lg={8} sm={8}><Panel>
             <Row>
                 <CustomerDetail customer={visit.Customer}/>
@@ -25,6 +25,6 @@ export default class Detail extends React.Component {
             </Row>
             <VisitDetail plannedFor={visit.plannedFor} fulfilledAt={visit.fulfilledAt}/>
             <TargetDetail targets={visit.Targets}/>
-        </Panel></Col>)
+        </Panel></Col>);
     }
 }

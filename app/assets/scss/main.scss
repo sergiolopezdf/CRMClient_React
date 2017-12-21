@@ -30,19 +30,19 @@ h2 {
   color: red;
 }
 
-ul#visitListElementDetails {
+ul.visitListElementDetails {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-li#customer {
+li.customer {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.65);
   border-bottom: thin dotted rgba(0, 0, 0, 0.26);
 }
 
-li#salesman {
+li.salesman {
   font-size: 13px;
   border-bottom: thin dotted rgba(0, 0, 0, 0.26);
   margin-bottom: 4px;
@@ -50,10 +50,6 @@ li#salesman {
 
 li.minorDetails {
   font-size: 10px;
-}
-
-ul#visitListElementDetails {
-
 }
 
 .list-group-item {
@@ -89,6 +85,7 @@ ul#visitListElementDetails {
 .list-group-item:last-child {
   border-radius: 0 9px 0 9px;
 }
+
 .list-group-item:focus {
   outline: none;
 }
@@ -106,6 +103,10 @@ ul#visitListElementDetails {
   color: rgba(0, 0, 0, 0.65);
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+#sendButton {
+  margin-top: 15px;
 }
 
 /*****************************/

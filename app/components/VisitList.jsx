@@ -20,10 +20,10 @@ export default class VisitList extends React.Component {
             this.props.visits.map((element, index) => {
                 return (
                     <VisitListElement visit={element} index={index} key={index} visitClick={this.visitClick}/>
-                )
+                );
             })
         }
-        </ListGroup></Col>)
+        </ListGroup></Col>);
 
     }
 }

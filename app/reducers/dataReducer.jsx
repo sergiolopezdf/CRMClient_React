@@ -1,6 +1,5 @@
 import {ISDATAREADY} from "../constants/constants";
 
-
 function dataReducer(state = ISDATAREADY, action) {
     switch (action.type) {
         case 'DOWNLOADED_JSON':
